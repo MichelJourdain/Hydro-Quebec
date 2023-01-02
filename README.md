@@ -12,9 +12,9 @@
 
 ### Screenshots
 
-![E0561BFD-8863-46DB-8C61-65C83FFF7A93](https://user-images.githubusercontent.com/83040228/209234636-6db1f47e-864c-4cda-bf27-817fc2a5173f.jpeg)
+![IMG_5754](https://user-images.githubusercontent.com/83040228/210258644-5ec5a432-b2be-4c40-9ef4-6f79fca78f85.jpeg)
 
-![FAD19D54-57B9-46E2-92D5-A64B82261B27](https://user-images.githubusercontent.com/83040228/209234641-b19e5fd3-ca6d-4578-a553-38a79dd76583.jpeg)
+![IMG_5755](https://user-images.githubusercontent.com/83040228/210258671-52152ca6-e4cc-4dfa-9954-de3aebf023bd.jpeg)
 
 ### Changelog
 #### 1.0
