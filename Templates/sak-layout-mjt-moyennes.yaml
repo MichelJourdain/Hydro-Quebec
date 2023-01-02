@@ -1,0 +1,288 @@
+sak_layout_mjt_moyennes:
+  template:
+    type: layout
+    defaults: 
+      - dummy: 0
+  layout:
+
+    aspectratio: 2/1.1
+    
+    toolsets:
+
+             # ==============================================================================
+              - toolset: current_billing_period_daily_consumption_mean
+                position:
+                  cx: 50
+                  cy: 50
+                tools:
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 50
+                      radius: 45
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+
+                  - type: 'segarc'
+                    id: 1
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 50
+                      start_angle: -212.5
+                      end_angle: 32.5
+                      width: 5
+                      radius: 40
+                    scale:
+                      min: 0
+                      max: 120
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#0000FF'
+                          20: '#808080'
+                          40: '#008000'
+                          60: '#800080'
+                          80: '#FF0000'
+                          100: '#B22222'
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 40
+                      cy: 32.5
+                      align: center
+                      icon_size: 18.5
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'state'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 40
+                      cy: 50
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 10em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'area'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 95
+                    styles:
+                      area:
+                        font-size: 7.2em
+
+              # ==============================================================================
+              - toolset: current_billing_period_kwh_cost_mean
+                position:
+                  cx: 150
+                  cy: 50
+                tools:
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 50
+                      radius: 45
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+
+                  - type: 'segarc'
+                    id: 1
+                    entity_index: 2
+                    position:
+                      cx: 50
+                      cy: 50
+                      start_angle: 212.5
+                      end_angle: -32.5
+                      width: 5
+                      radius: 40
+                    scale:
+                      min: 0.000
+                      max: 0.110
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0.000: '#0000FF'
+                          0.020: '#808080'
+                          0.040: '#008000'
+                          0.060: '#800080'
+                          0.080: '#FF0000'
+                          0.100: '#B22222'
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 2
+                    position:
+                      cx: 60
+                      cy: 32.5
+                      align: center
+                      icon_size: 18.5
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'state'
+                    id: 0
+                    entity_index: 2
+                    position:
+                      cx: 60
+                      cy: 50
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 10em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'area'
+                    id: 0
+                    entity_index: 2
+                    position:
+                      cx: 50
+                      cy: 95
+                    styles:
+                      area:
+                        font-size: 7.2em
+
+              # ==============================================================================
+              - toolset: current_billing_period_daily_bill_mean
+                position:
+                  cx: 100
+                  cy: 50
+                tools:
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 50
+                      radius: 45
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+                        filter: url(#nm-1)
+                  
+                  - type: 'segarc'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 50
+                      start_angle: -140
+                      end_angle: 140
+                      width: 5
+                      radius: 40
+                    scale:
+                      min: 0
+                      max: 12
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#0000FF'
+                          2: '#808080'
+                          4: '#008000'
+                          6: '#800080'
+                          8: '#FF0000'
+                          10: '#B22222'
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 30
+                      align: center
+                      icon_size: 18.5
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'state'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 50
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 15em
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        font-weight: bolder
+                        filter: url(#is-1)
+
+                  - type: 'area'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 95
+                    styles:
+                      area:
+                        font-size: 7.2em
+                        

@@ -1,0 +1,103 @@
+sak_layout_mjt_paiements:
+  template:
+    type: layout
+    defaults: 
+      - dummy: 0
+  layout:
+
+    aspectratio: 2/0.5
+    
+    toolsets:
+    
+             # ==============================================================================
+              - toolset: maison-balance
+                position:
+                  cx: 50
+                  cy: 37
+                tools:
+                
+                  - type: rectex
+                    id: 1
+                    position:
+                      cx: 45
+                      cy: 40
+                      width: 90
+                      height: 45
+                      radius:
+                        all: 2
+                    styles:
+                      rectex:
+                        fill: var(--primary-background-color)
+ 
+                  - type: 'state'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 30
+                    show:
+                      uom: end
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 20em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'area'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 50
+                    styles:
+                      area:
+                        font-size: 12em
+                        
+              - toolset: current_billing_period_projected_bill
+                position:
+                  cx: 145
+                  cy: 37
+                tools:
+                
+                  - type: rectex
+                    id: 1
+                    position:
+                      cx: 45
+                      cy: 40
+                      width: 90
+                      height: 45
+                      radius:
+                        all: 2
+                    styles:
+                      rectex:
+                        fill: var(--primary-background-color)
+ 
+                  - type: 'state'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 30
+                    show:
+                      uom: end
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 20em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'area'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 50
+                    styles:
+                      area:
+                        font-size: 12em

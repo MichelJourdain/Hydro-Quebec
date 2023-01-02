@@ -1,0 +1,329 @@
+sak_layout_mjt_kwh_total_regulier_pointe:
+  template:
+    type: layout
+    defaults: 
+      - dummy: 0
+  layout:
+
+    aspectratio: 2/1.1
+    
+    toolsets: 
+    
+# ================================================================
+              - toolset: billing_period_total_consumption
+                position:
+                  cx: 45
+                  cy: 20
+                tools:
+                
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 51
+                      cy: 80
+                      radius: 43
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+
+                  - type: segarc
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 80
+                      start_angle: 180
+                      end_angle: -90
+                      width: 5
+                      radius: 35
+                    scale:
+                      min: 0
+                      max: 2500
+                      width: 3
+                      offset: 2
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                      lastcolor: false
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#fee08b'
+                          500: '#fdae61'
+                          1000: '#f46d43'
+                          1500: '#d53e4f'
+                          2000: '#9e0142'
+                    animation:
+                      duration: 5
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+                        
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 65
+                      align: center
+                      icon_size: 18.5
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'state'
+                    id: 1
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 80
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 15em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'area'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 40
+                      cy: 115
+                    styles:
+                      area:
+                        font-size: 7.2em
+
+                  - type: text
+                    position:
+                      cx: 100
+                      cy: 80
+                    text: "="
+                    styles:
+                      text:
+                        text-anchor: middle  
+                        font-size: 15em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+# ================================================================
+              - toolset: billing_period_lower_price_consumption
+                position:
+                  cx: 110
+                  cy: 3
+                tools:
+                
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 76
+                      cy: 80
+                      radius: 31
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+                        
+                  - type: segarc
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 75
+                      cy: 80
+                      start_angle: 180
+                      end_angle: -90
+                      width: 4
+                      radius: 24
+                    scale:
+                      min: 0
+                      max: 2500
+                      width: 2
+                      offset: 1.75
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                      lastcolor: false
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#fee08b'
+                          500: '#fdae61'
+                          1000: '#f46d43'
+                          1500: '#d53e4f'
+                          2000: '#9e0142'
+                    animation:
+                      duration: 5
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 72
+                      cy: 70
+                      align: center
+                      icon_size: 12
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'state'
+                    id: 1
+                    entity_index: 1
+                    position:
+                      cx: 75
+                      cy: 80
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 10em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'area'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 67
+                      cy: 103
+                    styles:
+                      area:
+                        font-size: 7.2em
+
+                  - type: text
+                    position:
+                      cx: 60
+                      cy: 127
+                    text: "+"
+                    styles:
+                      text:
+                        text-anchor: middle  
+                        font-size: 18em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+# ================================================================
+              - toolset: billing_period_higher_price_consumption
+                position:
+                  cx: 140
+                  cy: 53
+                tools:
+                
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 76
+                      cy: 78
+                      radius: 31
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+                        
+                  - type: segarc
+                    id: 0
+                    entity_index: 2
+                    position:
+                      cx: 75
+                      cy: 78
+                      start_angle: 180
+                      end_angle: -90
+                      width: 4
+                      radius: 24
+                    scale:
+                      min: 0
+                      max: 2500
+                      width: 2
+                      offset: 1.75
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                      lastcolor: false
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#fee08b'
+                          500: '#fdae61'
+                          1000: '#f46d43'
+                          1500: '#d53e4f'
+                          2000: '#9e0142'
+                    animation:
+                      duration: 5
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+                        
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 2
+                    position:
+                      cx: 74
+                      cy: 70
+                      align: center
+                      icon_size: 12
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'state'
+                    id: 1
+                    entity_index: 2
+                    position:
+                      cx: 75
+                      cy: 80
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 10em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'area'
+                    id: 0
+                    entity_index: 2
+                    position:
+                      cx: 65
+                      cy: 102
+                    styles:
+                      area:
+                        font-size: 7.2em
