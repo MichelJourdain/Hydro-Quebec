@@ -133,7 +133,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     position:
                       cx: 76
                       cy: 80
-                      radius: 31
+                      radius: 30
                     styles:
                       circle:
                         fill: var(--primary-background-color)
@@ -147,7 +147,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                       start_angle: 180
                       end_angle: -90
                       width: 4
-                      radius: 24
+                      radius: 23
                     scale:
                       min: 0
                       max: 2500
@@ -244,7 +244,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     position:
                       cx: 76
                       cy: 78
-                      radius: 31
+                      radius: 30
                     styles:
                       circle:
                         fill: var(--primary-background-color)
@@ -258,7 +258,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                       start_angle: 180
                       end_angle: -90
                       width: 4
-                      radius: 24
+                      radius: 23
                     scale:
                       min: 0
                       max: 2500
