@@ -214,10 +214,12 @@ cards:
           
             - entity: sensor.hydroqc_maison_balance
               unit: '$'
+              decimals: 2
               area: 'Ver. égaux'
 
             - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
               unit: '$'
+              decimals: 2
               area: "Aujourd'hui"
               
           layout:
