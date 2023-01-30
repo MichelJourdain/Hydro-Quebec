@@ -5,15 +5,15 @@ sak_layout_mjt_paiements:
       - dummy: 0
   layout:
 
-    aspectratio: 2/0.5
+    aspectratio: 2/0.7
     
     toolsets:
     
              # ==============================================================================
               - toolset: maison-balance
                 position:
-                  cx: 50
-                  cy: 37
+                  cx: 60
+                  cy: 50
                 tools:
                 
                   - type: rectex
@@ -58,8 +58,8 @@ sak_layout_mjt_paiements:
                         
               - toolset: current_billing_period_projected_bill
                 position:
-                  cx: 145
-                  cy: 37
+                  cx: 155
+                  cy: 50
                 tools:
                 
                   - type: rectex
