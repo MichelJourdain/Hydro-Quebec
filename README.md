@@ -84,9 +84,10 @@ sensor:
 
 ### Screenshots
 
-![IMG_5754](https://user-images.githubusercontent.com/83040228/210258644-5ec5a432-b2be-4c40-9ef4-6f79fca78f85.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/215606793-b02ae728-a227-4cdf-a5fa-f6370f1aa268.jpeg)
 
-![IMG_5755](https://user-images.githubusercontent.com/83040228/210258671-52152ca6-e4cc-4dfa-9954-de3aebf023bd.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/215606838-c18833b1-3fda-4289-bc9a-0c0ea53d4bcd.jpeg)
+
 
 ### Changelog
 #### 1.0
