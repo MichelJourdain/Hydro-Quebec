@@ -6,7 +6,6 @@
 - Install [Swiss Army Knife Custom Card](https://github.com/amoebelabs/swiss-army-knife-card/).
 - Install vertical-stack-in-card from [HACS]
 - Install mini-graph-card from [HACS]
-- Install Mushroom card from [HACS]
 - Copy templates in /config/lovelace/sak_templates/templates/layouts/ directory
 - Copy theme in /config/themes/ directory
 - Add the following sensors in the file sensor.yaml
