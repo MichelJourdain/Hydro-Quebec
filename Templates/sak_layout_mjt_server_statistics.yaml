@@ -12,7 +12,7 @@ sak_layout_mjt_server_statistics:
       - toolset: half-circle
         position:
           cx: 0                             # Center on cards border 
-          cy: 70
+          cy: 78
         tools:
           # ------------------------------------------------------------
           - type: circle
@@ -31,7 +31,7 @@ sak_layout_mjt_server_statistics:
       - toolset: column-icon
         position:
           cx: 25
-          cy: 70
+          cy: 78
         tools:
           # ------------------------------------------------------------
           - type: icon
@@ -49,7 +49,7 @@ sak_layout_mjt_server_statistics:
       - toolset: column-name
         position:
           cx: 120
-          cy: 70
+          cy: 78
         tools:
           # ------------------------------------------------------------
           - type: name
@@ -82,7 +82,7 @@ sak_layout_mjt_server_statistics:
       - toolset: line1
         position:
           cx: 200                           # On 1/3 of card width
-          cy: 70
+          cy: 78
         tools:
           # ------------------------------------------------------------
           - type: line
@@ -102,7 +102,7 @@ sak_layout_mjt_server_statistics:
           name: toolset_tutorial_02_part1
           variables:
             - var_toolset_position_cx: 260
-            - var_toolset_position_cy: 70
+            - var_toolset_position_cy: 78
 
       # ================================================================
       - toolset: column-memory
@@ -111,6 +111,6 @@ sak_layout_mjt_server_statistics:
           variables:
             - var_entity_index: 1
             - var_toolset_position_cx: 355
-            - var_toolset_position_cy: 70
+            - var_toolset_position_cy: 78
             
          
