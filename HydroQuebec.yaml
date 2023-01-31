@@ -110,7 +110,7 @@ cards:
             align_state: center
             font_size: 90
             height: 90
-            hours_to_show: 672
+            hours_to_show: 1488
             line_color: var(--primary-color)
             line_width: 2
             group_by: "date"
@@ -142,7 +142,7 @@ cards:
             decimals: 2
             font_size: 90
             height: 90
-            hours_to_show: 672
+            hours_to_show: 1488
             line_color: var(--primary-color)
             line_width: 2
             group_by: "date"
@@ -174,7 +174,7 @@ cards:
             decimals: 2
             font_size: 90
             height: 90
-            hours_to_show: 672
+            hours_to_show: 1488
             line_color: var(--primary-color)
             line_width: 2
             group_by: "date"
@@ -234,11 +234,11 @@ cards:
             show_state: true
             entities:
               - entity: sensor.etat_hydroqc_maison_next_or_current_outage
-                name: Panne Prévue
+                name: Panne
               - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
-                name: Tarif Actuel
+                name: Tarif
               - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
-                name: Flex D
+                name: FlexD
 
       - type: vertical-stack
         cards:
@@ -258,7 +258,7 @@ cards:
             show_state: true
             entities:
               - entity: sensor.etat_hydroqc_maison_next_pre_heat_start
-                name: Pré-Chauffage
+                name: Chauffage
               - entity: sensor.etat_hydroqc_maison_next_peak_start
                 name: Début
               - entity: sensor.etat_hydroqc_maison_next_peak_end
