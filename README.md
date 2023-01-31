@@ -11,6 +11,7 @@
 - Add the following sensors in the file sensor.yaml
 
 ```
+# États des période Hydro-Québec
 sensor:
   - platform: template
     sensors:
@@ -22,7 +23,10 @@ sensor:
           {% if is_state('sensor.hydroqc_maison_next_or_current_outage', 'unavailable') %}
             Aucune 
           {% else %}
-            {{ states('sensor.hydroqc_maison_next_or_current_outage') }}
+            {% set heure = as_timestamp(states('sensor.hydroqc_maison_next_or_current_outage')) | timestamp_custom('%H:%M') %}
+            {% set jour = as_timestamp(states('sensor.hydroqc_maison_next_or_current_outage')) | timestamp_custom('%w' ) | int -1 %}
+            {% set journee = ["Lun", "Mar","Mer","Jeu","Ven","Sam","Dim"] %}
+            {{ journee[(jour) | int] }} {{ heure }}
           {% endif %}
         
   - platform: template
@@ -35,7 +39,10 @@ sensor:
           {% if is_state('sensor.hydroqc_maison_next_pre_heat_start', 'unavailable') %}
             Inactif
           {% else %}
-            {{ states('sensor.hydroqc_maison_next_pre_heat_start') }}
+            {% set heure = as_timestamp(states('sensor.hydroqc_maison_next_pre_heat_start')) | timestamp_custom('%H:%M') %}
+            {% set jour = as_timestamp(states('sensor.hydroqc_maison_next_pre_heat_start')) | timestamp_custom('%w' ) | int -1 %}
+            {% set journee = ["Lun", "Mar","Mer","Jeu","Ven","Sam","Dim"] %}
+            {{ journee[(jour) | int] }} {{ heure }}
           {% endif %}
         
   - platform: template
@@ -48,7 +55,10 @@ sensor:
           {% if is_state('sensor.hydroqc_maison_next_peak_start', 'unavailable') %}
             Inactif
           {% else %}
-            {{ states('sensor.hydroqc_maison_next_peak_start') }}
+            {% set heure = as_timestamp(states('sensor.hydroqc_maison_next_peak_start')) | timestamp_custom('%H:%M') %}
+            {% set jour = as_timestamp(states('sensor.hydroqc_maison_next_peak_start')) | timestamp_custom('%w' ) | int -1 %}
+            {% set journee = ["Lun", "Mar","Mer","Jeu","Ven","Sam","Dim"] %}
+            {{ journee[(jour) | int] }} {{ heure }}
           {% endif %}
         
   - platform: template
@@ -61,7 +71,10 @@ sensor:
           {% if is_state('sensor.hydroqc_maison_next_peak_end', 'unavailable') %}
             Inactif
           {% else %}
-            {{ states('sensor.hydroqc_maison_next_peak_end') }}
+            {% set heure = as_timestamp(states('sensor.hydroqc_maison_next_peak_end')) | timestamp_custom('%H:%M') %}
+            {% set jour = as_timestamp(states('sensor.hydroqc_maison_next_peak_end')) | timestamp_custom('%w' ) | int -1 %}
+            {% set journee = ["Lun", "Mar","Mer","Jeu","Ven","Sam","Dim"] %}
+            {{ journee[(jour) | int] }} {{ heure }}
           {% endif %}
         
   - platform: template
@@ -69,7 +82,7 @@ sensor:
       etat_hydroqc_maison_current_dpc_period_detail:
         unique_id: "etat_hydroqc_maison_current_dpc_period_detail"
         friendly_name: "État du tarif"
-        icon_template: mdi:alpha-p-box
+        icon_template: mdi:currency-usd
         value_template:  >
           {% if is_state('sensor.hydroqc_maison_current_dpc_period_detail', 'normal') %}
             Normal
@@ -78,6 +91,8 @@ sensor:
           {% else %}
             {{ states('sensor.hydroqc_maison_current_dpc_period_detail') }}
           {% endif %}     
+        
+
 ```
 
 - Restart Home Assistant
