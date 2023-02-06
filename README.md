@@ -91,11 +91,15 @@ sensor:
 
 - Restart Home Assistant
 
-### Screenshots
+## Screenshots
 
 ![image](https://user-images.githubusercontent.com/83040228/215606793-b02ae728-a227-4cdf-a5fa-f6370f1aa268.jpeg)
 
 ![image](https://user-images.githubusercontent.com/83040228/215885972-3e10689b-034f-4fdd-80c0-9fa7535d64fb.jpeg)
+
+### With Apexcharts-card
+
+![image](https://user-images.githubusercontent.com/83040228/216857475-c6db88d5-3ebb-4855-a668-844354559596.jpeg)
 
 ### Changelog
 #### 1.0
