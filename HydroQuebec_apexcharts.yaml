@@ -1,0 +1,355 @@
+type: custom:vertical-stack-in-card
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Période actuelle"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              - entity: sensor.hydroqc_maison_current_billing_period_projected_total_consumption
+                area: "kWh prévus"
+                icon: mdi:flash
+              - entity: sensor.hydroqc_maison_current_billing_period_current_day
+                area: "Jour courant"
+                icon: mdi:calendar
+                unit: "jours"
+              - entity: sensor.hydroqc_maison_current_billing_period_duration
+                area: "Nombre jour"
+                unit: "jours"
+                icon: mdi:calendar-month-outline
+            layout:
+              template:
+                name: sak_layout_mjt_jours_prevision_kwh_periode
+
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "kWh utilisés"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              - entity: sensor.hydroqc_maison_current_billing_period_total_consumption
+                area: "Total"
+                icon: mdi:home-lightning-bolt
+              - entity: sensor.hydroqc_maison_current_billing_period_lower_price_consumption
+                area: "Bas"
+                icon: mdi:home-minus
+              - entity: sensor.hydroqc_maison_current_billing_period_higher_price_consumption
+                area: "Haut"
+                icon: mdi:home-plus
+
+            layout:
+              template:
+                name: sak_layout_mjt_kwh_total_regulier_pointe
+
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Moyennes périodiques"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              - entity: sensor.hydroqc_maison_current_billing_period_daily_bill_mean
+                area: "Coût"
+                decimals: 2
+              - entity: sensor.hydroqc_maison_current_billing_period_daily_consumption_mean
+                area: "kWh Jour"
+              - entity: sensor.hydroqc_maison_current_billing_period_kwh_cost_mean
+                area: "Coût kWh"
+                decimals: 2
+
+            layout:
+              template:
+                name: sak_layout_mjt_moyennes
+
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Température moyenne"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+                  
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: true
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              floating: false
+              colorize_states: true
+            graph_span: 20d
+            span:
+              end: day
+            series:
+              - entity: sensor.hydroqc_maison_current_billing_period_average_temperature
+                type: column
+                float_precision: 2 
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 1
+                show:
+                  header_color_threshold: true
+                  name_in_header: false
+                  extremas: false
+                color_threshold:
+                  - value: 30
+                    color: green
+                  - value: -1
+                    color: lightblue
+                  - value: -2
+                    color: blue
+                  - value: -3
+                    color: yellow
+                  - value: -4
+                    color: orange
+                  - value: -5
+                    color: orangered
+                  - value: -6
+                    color: red
+                    
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Coûts estimés"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+                  
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: true
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              floating: false
+              colorize_states: true
+            graph_span: 20d
+            span:
+              end: day
+            series:
+              - entity: sensor.hydroqc_maison_current_billing_period_projected_bill
+                type: column
+                float_precision: 2 
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 1
+                show:
+                  header_color_threshold: true
+                  name_in_header: false
+                  extremas: false
+                color_threshold:
+                  - value: 0
+                    color: green
+                  - value: 100
+                    color: lightblue
+                  - value: 200
+                    color: orange
+                  - value: 300
+                    color: orangered
+                  - value: 400
+                    color: red
+
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Tarif Flex D"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+                  
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: true
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              floating: false
+              colorize_states: true
+            graph_span: 20d
+            span:
+              end: day
+            series:
+              - entity: sensor.hydroqc_maison_net_saving_loss_vs_rate_d
+                type: column
+                float_precision: 2 
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 1
+                show:
+                  header_color_threshold: true
+                  name_in_header: false
+                  extremas: false
+                color_threshold:
+                  - value: 10
+                    color: green
+                  - value: -30
+                    color: lightblue
+                  - value: -60
+                    color: orange
+                  - value: -80
+                    color: orangered
+                  - value: -100
+                    color: red
+
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Coûts"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              - entity: sensor.hydroqc_maison_balance
+                unit: "$"
+                decimals: 2
+                area: "Ver. égaux"
+
+              - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
+                unit: "$"
+                decimals: 2
+                area: "Aujourd'hui"
+
+            layout:
+              template:
+                name: sak_layout_mjt_paiements
+                
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "États actuels"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+          - type: glance
+            show_name: true
+            show_icon: true
+            show_state: true
+            entities:
+              - entity: sensor.etat_hydroqc_maison_next_or_current_outage
+                name: Panne
+              - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
+                name: Tarif
+              - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
+                name: FlexD
+
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Périodes de pointes"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+          - type: glance
+            show_name: true
+            show_icon: true
+            show_state: true
+            entities:
+              - entity: sensor.etat_hydroqc_maison_next_pre_heat_start
+                name: Chauffage
+              - entity: sensor.etat_hydroqc_maison_next_peak_start
+                name: Début
+              - entity: sensor.etat_hydroqc_maison_next_peak_end
+                name: Fin
+                state_color: true
+
+      - type: vertical-stack
+        cards:
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: "Système"
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 5em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              # CPU
+              - entity: sensor.hydroqc_add_on_cpu_percent
+                name: "Système"
+              # Memory
+              - entity: sensor.hydroqc_add_on_memory_percent
+                icon: mdi:memory
+            layout:
+              template:
+                name: sak_layout_mjt_server_statistics
+
