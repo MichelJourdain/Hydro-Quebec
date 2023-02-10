@@ -295,7 +295,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     entity_index: 2
                     position:
                       cx: 65
-                      cy: 102
+                      cy: 100
                     styles:
                       area:
                         font-size: 7.2em
