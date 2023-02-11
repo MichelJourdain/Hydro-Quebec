@@ -10,7 +10,7 @@
 - Copy templates in /config/lovelace/sak_templates/templates/layouts/ directory
 - Copy theme in /config/themes/ directory
 - Copy the HydroQc.yaml
-- 
+
 - Add the following sensors in the file sensor.yaml
 
 ```
