@@ -9,8 +9,9 @@
 - Install Apexcharts-card from [HACS] 
 - Copy templates in /config/lovelace/sak_templates/templates/layouts/ directory
 - Copy theme in /config/themes/ directory
-- Add the following sensors in the file sensor.yaml
 - Copy the HydroQc.yaml
+- 
+- Add the following sensors in the file sensor.yaml
 
 ```
 # États des période Hydro-Québec
