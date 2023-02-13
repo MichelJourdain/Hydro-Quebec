@@ -1,1 +1,150 @@
-ajout
+type: custom:vertical-stack-in-card
+cards:
+  - type: horizontal-stack
+    cards:
+
+      - type: vertical-stack
+        cards:
+        
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: Production - Demande
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 4em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              - entity: sensor.hydro_quebec_production_total
+                name: "Production"
+                icon: mdi:transmission-tower-import
+              - entity: sensor.hydro_quebec_demande_totale
+                name: "Demande"
+                icon: mdi:transmission-tower-export
+            layout:
+              template:
+                name: sak_layout_mjt_production_demande
+                
+      - type: vertical-stack
+        cards:
+        
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: +20min - +100min
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 4ema
+                  - sak_layout_header_font_text_transform: capitalize
+            
+          - type: custom:apexcharts-card
+            header:
+              show: true
+              show_states: true
+              colorize_states: true
+            now:
+              show: true
+              label: Maintenant
+            series:
+              - entity: sensor.hydro_quebec_demande_totale
+                name: Demande
+                type: column
+                offset: +20min
+                show:
+                  legend_value: false
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_production_total
+                name: Production
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +100min
+                group_by:
+                  duration: 15min
+            
+  - type: horizontal-stack
+    cards:
+                
+          - type: 'custom:swiss-army-knife-card'
+            entities:
+              - entity: sensor.hydro_quebec_production_hydraulique
+                name: "Hydraulique"
+                icon: mdi:hydro-power
+            layout:
+              template:
+                name: sak_layout_fce_sensor1
+                variables:
+                  - sak_layout_sensor_name_above_state: false
+                  - sak_layout_sensor_scale_max: 55000
+ 
+          - type: 'custom:swiss-army-knife-card'
+            entities:
+              - entity: sensor.hydro_quebec_production_eolien
+                name: "Éolien"
+                icon: mdi:wind-turbine
+            layout:
+              template:
+                name: sak_layout_fce_sensor1
+                variables:
+                  - sak_layout_sensor_name_above_state: false
+                  - sak_layout_sensor_scale_max: 5000 
+
+          - type: 'custom:swiss-army-knife-card'
+            entities:
+              - entity: sensor.hydro_quebec_production_solaire
+                name: "Solaire"
+                icon: mdi:solar-power-variant
+            layout:
+              template:
+                name: sak_layout_fce_sensor1
+                variables:
+                  - sak_layout_sensor_name_above_state: false
+                  - sak_layout_sensor_scale_max: 5000 
+                  
+  - type: horizontal-stack
+    cards:
+
+          - type: 'custom:swiss-army-knife-card'
+            entities:
+              - entity: sensor.hydro_quebec_production_thermique
+                name: "Thermique"
+                icon: mdi:factory
+            layout:
+              template:
+                name: sak_layout_fce_sensor1
+                variables:
+                  - sak_layout_sensor_name_above_state: false
+                  - sak_layout_sensor_scale_max: 5000 
+                  
+          - type: 'custom:swiss-army-knife-card'
+            entities:
+              - entity: sensor.hydro_quebec_production_autres
+                name: "Autres"
+                icon: mdi:home-lightning-bolt
+            layout:
+              template:
+                name: sak_layout_fce_sensor1
+                variables:
+                  - sak_layout_sensor_name_above_state: false
+                  - sak_layout_sensor_scale_max: 5000 
+
+          - type: 'custom:swiss-army-knife-card'
+            entities:
+              - entity: sensor.hydro_quebec_production_total
+                name: "Total"
+                icon: mdi:home-lightning-bolt-outline
+            layout:
+              template:
+                name: sak_layout_fce_sensor1
+                variables:
+                  - sak_layout_sensor_name_above_state: false
+                  - sak_layout_sensor_scale_max: 55000
