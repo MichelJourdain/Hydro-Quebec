@@ -98,9 +98,6 @@ sensor:
 
 ![image](https://user-images.githubusercontent.com/83040228/217979577-b81bfa99-fd84-49da-86ef-5ac7b9501229.jpeg)
 
-![image](https://user-images.githubusercontent.com/83040228/217979595-324929c1-9e6a-4ca2-af9e-875c2d0712ac.jpeg)
-
-
 ### Changelog
 #### 1.0
 - First release
