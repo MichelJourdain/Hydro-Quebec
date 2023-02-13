@@ -4,11 +4,10 @@ Cette page est imspirée par le travail de [djiesr](https://github.com/djiesr/Hy
 
 ### Installation
 
-- Install [Swiss Army Knife Custom Card](https://github.com/amoebelabs/swiss-army-knife-card/).
+- Install [Swiss Army Knife Custom Card](https://github.com/amoebelabs/swiss-army-knife-card/)
+- Install Apex Charts Card rom [HACS]
 - Install vertical-stack-in-card from [HACS]
-- Install mini-graph-card from [HACS]
 - Copy the hq_open_data.yaml file with your other package file.
-
 - Copy the HydroQc.yaml
 
 - Restart Home Assistant
