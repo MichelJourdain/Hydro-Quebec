@@ -8,7 +8,7 @@ Cette page est imspirée par le travail de [djiesr](https://github.com/djiesr/Hy
 - Install Apex Charts Card rom [HACS]
 - Install vertical-stack-in-card from [HACS]
 - Copy the hq_open_data.yaml file with your other package file.
-- Copy the HydroQc.yaml
+- Copy the HqDonneesOuvertes.yaml
 
 - Restart Home Assistant
 
@@ -19,4 +19,3 @@ Cette page est imspirée par le travail de [djiesr](https://github.com/djiesr/Hy
 ### Changelog
 #### 1.0
 - First release
-
