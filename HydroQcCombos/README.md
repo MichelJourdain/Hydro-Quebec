@@ -1,6 +1,6 @@
 # Hq Combo Page
 
-HydroQC and Donnees Ouvertes Page in one yaml
+HydroQC and Donnees Ouvertes Page in one yaml with tabs.
 
 ### Installation
 
