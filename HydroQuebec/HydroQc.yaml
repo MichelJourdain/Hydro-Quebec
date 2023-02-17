@@ -278,6 +278,8 @@ cards:
                 name: "Versements égaux"
               - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
                 name: "Réel"
+              - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
+                name: "Tarif actuel"
                 
       - type: vertical-stack
         cards:
@@ -301,12 +303,12 @@ cards:
               - entity: binary_sensor.hydroqc_maison_hydroquebec_website_status
                 name: "Site"
               - entity: sensor.etat_hydroqc_maison_next_or_current_outage
-                name: Panne
-              - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
-                name: Tarif
+                name: "Panne"
+              - entity: binary_sensor.hydroqc_maison_critical_peak_in_progress
+                name: "Pointe"
               - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
-                name: FlexD
-
+                name: "FlexD"
+                       
       - type: vertical-stack
         cards:
 
@@ -327,11 +329,11 @@ cards:
             show_state: true
             entities:
               - entity: binary_sensor.hydroqc_maison_pre_heat_in_progress
-                name: Réchauffage
+                name: "Réchauffage"
               - entity: sensor.etat_hydroqc_maison_next_pre_heat_start
-                name: Chauffage
+                name: "Chauffage"
               - entity: sensor.etat_hydroqc_maison_next_peak_start
-                name: Début
+                name: "Début"
               - entity: sensor.etat_hydroqc_maison_next_peak_end
-                name: Fin
+                name: "Fin"
                 state_color: true
