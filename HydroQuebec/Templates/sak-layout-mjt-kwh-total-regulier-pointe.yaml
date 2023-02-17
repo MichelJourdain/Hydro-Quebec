@@ -21,7 +21,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     entity_index: 0
                     position:
                       cx: 51
-                      cy: 80
+                      cy: 82
                       radius: 33
                     styles:
                       circle:
@@ -101,7 +101,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     entity_index: 0
                     position:
                       cx: 40
-                      cy: 105
+                      cy: 103
                     styles:
                       area:
                         font-size: 7.2em
@@ -197,8 +197,8 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     id: 0
                     entity_index: 1
                     position:
-                      cx: 67
-                      cy: 103
+                      cx: 60
+                      cy: 100
                     styles:
                       area:
                         font-size: 7.2em
@@ -294,14 +294,14 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     id: 0
                     entity_index: 2
                     position:
-                      cx: 65
-                      cy: 100
+                      cx: 62
+                      cy: 98
                     styles:
                       area:
                         font-size: 7.2em
                         
 # ================================================================
-              - toolset: billing_period_higher_price_consumption
+              - toolset: billing_period_projected_total_consumption
                 position:
                   cx: 59
                   cy: 53
@@ -393,7 +393,7 @@ sak_layout_mjt_kwh_total_regulier_pointe:
                     entity_index: 3
                     position:
                       cx: 60
-                      cy: 97
+                      cy: 96
                     styles:
                       area:
                         font-size: 7.2em
