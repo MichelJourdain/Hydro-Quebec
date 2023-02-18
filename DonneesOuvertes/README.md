@@ -8,6 +8,7 @@ Cette page est imspirée par le travail de [djiesr](https://github.com/djiesr/Hy
 - Install apexcharts-card from [HACS]
 - Install vertical-stack-in-card from [HACS]
 - Copy the hq_open_data.yaml file with your other package file.
+- Copy templates in /config/lovelace/sak_templates/templates/layouts/ directory
 - Copy the HqDonneesOuvertes.yaml
 
 - Restart Home Assistant
