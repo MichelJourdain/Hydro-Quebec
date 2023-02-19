@@ -7,7 +7,10 @@
 - Install vertical-stack-in-card from [HACS]
 - Install mini-graph-card from [HACS]
 - Install Apexcharts-card from [HACS] 
-- Copy templates in /config/lovelace/sak_templates/templates/layouts/ directory
+- Copy the folowing templates in /config/lovelace/sak_templates/templates/layouts/ directory
+  - sak-layout-mjt-kwh-total-regulier-pointe.yaml
+  - sak-layout-mjt-moyennes.yaml
+  - sak-layout-mjt-periode-actuelle.yaml
 - Copy theme in /config/themes/ directory
 - Copy the HydroQc.yaml
 
