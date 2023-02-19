@@ -9,7 +9,7 @@ Cette page est imspirée par le travail de [djiesr](https://github.com/djiesr/Hy
 - Install vertical-stack-in-card from [HACS]
 - Copy the hq_open_data.yaml file with your other package file.
 - Copy the following template in /config/lovelace/sak_templates/templates/layouts/ directory
-  - sak_layout_mjt_periode_actuelle.yaml
+  - sak-layout-mjt-production-demande.yaml
 - Copy the HqDonneesOuvertes.yaml
 
 - Restart Home Assistant
