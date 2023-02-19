@@ -1,0 +1,204 @@
+sak_layout_mjt_kwh_total_previsions:
+  template:
+    type: layout
+    defaults: 
+      - dummy: 0
+  layout:
+
+    aspectratio: 2/1.1
+    
+    toolsets:
+    
+# ================================================================
+              - toolset: billing_period_total_consumption
+                position:
+                  cx: 50
+                  cy: 20
+                tools:
+                
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 0
+                    position:
+                      cx: 51
+                      cy: 82
+                      radius: 33
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+
+                  - type: segarc
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 80
+                      start_angle: 180
+                      end_angle: -90
+                      width: 5
+                      radius: 35
+                    scale:
+                      min: 0
+                      max: 5000
+                      width: 3
+                      offset: 2
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                      lastcolor: false
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#fee08b'
+                          1000: '#fdae61'
+                          2000: '#f46d43'
+                          3000: '#d53e4f'
+                          4000: '#9e0142'
+                    animation:
+                      duration: 5
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+                        
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 68
+                      align: center
+                      icon_size: 15
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'state'
+                    id: 1
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 82
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 12em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'area'
+                    id: 0
+                    entity_index: 0
+                    position:
+                      cx: 50
+                      cy: 125
+                    styles:
+                      area:
+                        font-size: 8em
+
+# ================================================================
+              - toolset: billing_period_projected_total_consumption
+                position:
+                  cx: 150
+                  cy: 20
+                tools:
+                
+                  # Neumorphic Disc
+                  - type: circle
+                    entity_index: 1
+                    position:
+                      cx: 51
+                      cy: 82
+                      radius: 33
+                    styles:
+                      circle:
+                        fill: var(--primary-background-color)
+
+                  - type: segarc
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 80
+                      start_angle: 180
+                      end_angle: -90
+                      width: 5
+                      radius: 35
+                    scale:
+                      min: 0
+                      max: 5000
+                      width: 3
+                      offset: 2
+                    show:
+                      scale: true
+                      style: 'colorstops'
+                      lastcolor: false
+                    segments:
+                      colorstops:
+                        gap: 1
+                        colors:
+                          0: '#fee08b'
+                          1000: '#fdae61'
+                          2000: '#f46d43'
+                          3000: '#d53e4f'
+                          4000: '#9e0142'
+                    animation:
+                      duration: 5
+                    styles:
+                      foreground:
+                        fill: var(--theme-gradient-color-02)
+                      background:
+                        fill: var(--cs-theme-default-darken-15)
+                        filter: url(#is-1)
+                        
+                  - type: 'icon'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 68
+                      align: center
+                      icon_size: 15
+                    styles:
+                      icon:
+                        color: var(--primary-text-color)
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+                        
+                  - type: 'state'
+                    id: 1
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 82
+                    show:
+                      uom: bottom
+                    styles:
+                      state:
+                        text-anchor: middle
+                        font-size: 12em
+                        font-weight: bolder
+                        fill: var(--primary-text-color)
+                        opacity: 0.7
+                        filter: url(#is-1)
+
+                  - type: 'area'
+                    id: 0
+                    entity_index: 1
+                    position:
+                      cx: 50
+                      cy: 125
+                    styles:
+                      area:
+                        font-size: 8em
