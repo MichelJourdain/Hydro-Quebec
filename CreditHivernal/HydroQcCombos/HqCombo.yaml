@@ -62,19 +62,13 @@ tabs:
                       - entity: sensor.hydroqc_maison_current_billing_period_total_consumption
                         area: "Total"
                         icon: mdi:home-lightning-bolt
-                      - entity: sensor.hydroquebec_302397801_yesterday_lower_price_consumption
-                        area: "Bas"
-                        icon: mdi:home-minus
-                      - entity: sensor.hydroquebec_302397801_yesterday_higher_price_consumption
-                        area: "Haut"
-                        icon: mdi:home-plus
                       - entity: sensor.hydroqc_maison_current_billing_period_projected_total_consumption
                         area: "Prévus"
                         icon: mdi:flash
 
                     layout:
                       template:
-                        name: sak_layout_mjt_kwh_total_regulier_pointe
+                        name: sak_layout_mjt_kwh_total_previsions
                 
              - type: vertical-stack
                cards:
