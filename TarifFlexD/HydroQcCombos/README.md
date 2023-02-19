@@ -1,6 +1,4 @@
-# Hq Combo Page
-
-# HqCombo_CH Page
+# HqCombo Page
 
 ### Installation
 
@@ -14,7 +12,7 @@
   - sak-layout-mjt-periode-actuelle.yaml
   - sak_layout_mjt_production_demande.yaml
 - Copy theme in /config/themes/ directory
-- Copy the HqCombo_CH.yaml
+- Copy the HqCombo.yaml
 
 - Add the following sensors in the file sensor.yaml
 
