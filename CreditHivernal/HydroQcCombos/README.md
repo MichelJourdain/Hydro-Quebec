@@ -1,4 +1,4 @@
-# HqCombo_CH Page
+# HqComboPage
 
 ### Installation
 
