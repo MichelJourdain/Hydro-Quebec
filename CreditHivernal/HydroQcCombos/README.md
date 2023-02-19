@@ -10,7 +10,7 @@
   - sak-layout-mjt-kwh-total-previsions.yaml
   - sak-layout-mjt-moyennes.yaml
   - sak-layout-mjt-periode-actuelle.yaml
-  - sak_layout_mjt_production_demande.yaml
+  - sak-layout-mjt-production-demande.yaml
 - Copy theme in /config/themes/ directory
 - Copy the HqCombo.yaml
 
