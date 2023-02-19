@@ -7,7 +7,7 @@
 - Install vertical-stack-in-card from [HACS]
 - Install Apexcharts-card from [HACS] 
 - Copy the folowing templates in /config/lovelace/sak_templates/templates/layouts/ directory
-  - sak-layout-mjt-kwh-total-regulier-pointe.yaml
+  - sak-layout-mjt-kwh-total-previsions.yaml
   - sak-layout-mjt-moyennes.yaml
   - sak-layout-mjt-periode-actuelle.yaml
   - sak_layout_mjt_production_demande.yaml
