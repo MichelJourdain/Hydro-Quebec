@@ -99,16 +99,6 @@ sensor:
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/83040228/217979577-b81bfa99-fd84-49da-86ef-5ac7b9501229.jpeg)
-
-### Changelog
-#### 1.0
-- First release
-
-
-
-## Screenshots
-
 ![image](https://user-images.githubusercontent.com/83040228/218573003-8443f281-ee8d-4a0b-b79b-3a6fdbb2691c.jpeg)
 
 ![image](https://user-images.githubusercontent.com/83040228/218573046-0415498c-cccb-4e31-b05f-f0d3e3b407b2.jpeg)
