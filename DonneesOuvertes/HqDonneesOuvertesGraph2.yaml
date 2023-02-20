@@ -1,0 +1,131 @@
+type: custom:vertical-stack-in-card
+cards:
+  - type: horizontal-stack
+    cards:
+
+      - type: vertical-stack
+        cards:
+
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: Production - Demande
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 4em
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:swiss-army-knife-card
+            entities:
+              - entity: sensor.hydro_quebec_production_total
+                name: "Production"
+                icon: mdi:transmission-tower-import
+              - entity: sensor.hydro_quebec_demande_totale
+                name: "Demande"
+                icon: mdi:transmission-tower-export
+            layout:
+              template:
+                name: sak_layout_mjt_production_demande
+
+      - type: vertical-stack
+        cards:
+
+          - type: custom:swiss-army-knife-card
+            disable_card: true
+            layout:
+              template:
+                name: sak_layout_fce_header
+                variables:
+                  - sak_layout_header_content: Energie
+                  - sak_layout_header_font_color: var(--secondary-text-color)
+                  - sak_layout_header_font_size: 4ema
+                  - sak_layout_header_font_text_transform: capitalize
+
+          - type: custom:apexcharts-card
+            header:
+              show: true
+              show_states: true
+              colorize_states: true
+            apex_config:
+              legend:
+                show: false
+            series:
+              - entity: sensor.hydro_quebec_production_hydraulique
+                color: skyblue
+                name: Hydraulique
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +90min
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_production_eolien
+                color: green
+                name: Eolienne
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +90min
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_production_solaire
+                color: yellow
+                name: Solaire
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +90min
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_production_autres
+                color: lightgreen
+                name: Autres
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +90min
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_production_thermique
+                color: red
+                name: Thermique
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +360min
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_demande_totale
+                color: white
+                name: Demande
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +15min
+                group_by:
+                  duration: 15min
+              - entity: sensor.hydro_quebec_production_total
+                color: orange
+                name: Production
+                type: line
+                stroke_width: 2
+                extend_to: false
+                show:
+                  legend_value: false
+                offset: +20min
+                group_by:
+                  duration: 15min
