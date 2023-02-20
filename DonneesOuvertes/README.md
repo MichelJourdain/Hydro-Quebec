@@ -16,7 +16,13 @@ Cette page est imspirée par le travail de [djiesr](https://github.com/djiesr/Hy
 
 ## Screenshots
 
+### Graphique 1
+
 ![image](https://user-images.githubusercontent.com/83040228/218549829-dbc3f900-81db-457d-a757-b53aa54741fb.jpeg)
+
+### Graphique 2
+
+![image](https://user-images.githubusercontent.com/83040228/220209982-0699278a-d656-477f-a085-1ed91b1d3c11.jpeg)
 
 ### Changelog
 #### 1.0
