@@ -9,7 +9,7 @@
 - Copy the folowing templates in /config/lovelace/sak_templates/templates/layouts/ directory
   - sak-layout-mjt-kwh-total-previsions.yaml
   - sak-layout-mjt-moyennes.yaml
-  - sak-layout-mjt-periode-actuelle.yaml
+  - sak-layout-mjt-jours-prevision-kwh-periode.yaml
   - sak-layout-mjt-production-demande.yaml
 - Copy theme in /config/themes/ directory
 - Copy the HqCombo.yaml
