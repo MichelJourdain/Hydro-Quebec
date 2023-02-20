@@ -85,7 +85,8 @@ sensor:
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/83040228/219972641-cf7d3525-a832-456c-bc6f-815d514e8a70.jpeg)
+![image](https://user-images.githubusercontent.com/83040228/220205161-9e73412a-c230-4c8f-9c11-0602cbc84e00.jpeg)
+
 
 ### Changelog
 #### 1.0
