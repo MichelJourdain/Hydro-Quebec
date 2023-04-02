@@ -274,13 +274,15 @@ cards:
             show_icon: true
             show_state: true
             entities:
-              - entity: sensor.hydroqc_maison_balance
-                name: "Versements égaux"
-              - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
-                name: "Réel"
-              - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
-                name: "Tarif actuel"
-                
+               - entity: sensor.hydroqc_maison_balance
+                 name: "Coûts"
+               - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
+                 name: "Réel"
+               - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
+                 name: "Tarif"
+               - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
+                 name: "Égaux"
+                 
       - type: vertical-stack
         cards:
                 
