@@ -288,11 +288,13 @@ tabs:
                    show_state: true
                    entities:
                      - entity: sensor.hydroqc_maison_balance
-                       name: "Versements égaux"
+                       name: "Coûts"
                      - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
                        name: "Réel"
                      - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
-                       name: "Tarif actuel"
+                       name: "Tarif"
+                     - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
+                       name: "Égaux"
                 
              - type: vertical-stack
                cards:
@@ -319,8 +321,6 @@ tabs:
                        name: "Panne"
                      - entity: binary_sensor.hydroqc_maison_critical_peak_in_progress
                        name: "Pointe"
-                     - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
-                       name: "FlexD"
 
              - type: vertical-stack
                cards:
