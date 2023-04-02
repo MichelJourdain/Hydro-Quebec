@@ -308,9 +308,7 @@ cards:
                 name: "Panne"
               - entity: binary_sensor.hydroqc_maison_critical_peak_in_progress
                 name: "Pointe"
-              - entity: binary_sensor.hydroqc_maison_current_period_epp_enabled
-                name: "FlexD"
-                       
+                
       - type: vertical-stack
         cards:
 
