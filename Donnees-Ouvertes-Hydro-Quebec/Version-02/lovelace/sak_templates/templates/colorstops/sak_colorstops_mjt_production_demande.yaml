@@ -1,0 +1,48 @@
+sak_colorstops_mjt_production_demande:
+  template:
+    type: colorstops
+    defaults:
+      - dummy: 0
+  colorstops:
+    colors:    
+      - value: 14000
+        color: '#06AFFD'  
+      - value: 15000
+        color: '#07D7FC'  
+      - value: 16000
+        color: '#07FCF8' 
+      - value: 17000
+        color: '#08FBD2'  
+      - value: 18000
+        color: '#0AFAAA'  
+      - value: 19000
+        color: '#0BF86E'  
+      - value: 20000
+        color: '#50F40A' 
+      - value: 21000
+        color: '#9EF30B'  
+      - value: 22000
+        color: '#D3F20C'  
+      - value: 23000
+        color: '#F0E90E'  
+      - value: 24000
+        color: '#EFC20F'  
+      - value: 25000
+        color: '#EF9D0F	' 
+      - value: 26000
+        color: '#EE7B10'  
+      - value: 27000
+        color: '#ED5711'  
+      - value: 28000
+        color: '#CA430E'  
+      - value: 29000
+        color: '#BA3B0D'  
+      - value: 30000
+        color: '#94260A' 
+      - value: 31000
+        color: '#8A210A'  
+      - value: 32000
+        color: '#811C09' 
+      - value: 33000
+        color: '#800000'  
+        

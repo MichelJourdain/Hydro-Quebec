@@ -1,0 +1,813 @@
+sak_layout_mjt_hydro_quebec:
+  template:
+    type: layout
+
+  layout:
+
+    aspectratio: 3/2.3                 
+    styles:
+      card:
+    toolsets:
+    
+      # ================================================================
+      - toolset: retangle-production-demande
+        position:
+          cx: 61
+          cy: 125
+        tools:
+          # ------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 50
+              cy: 50
+              width: 120
+              height: 200
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: url(#sak-green-blue-gradient)
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: name
+            position:
+              cx: 19
+              cy: -45
+            entity_index: 0
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+          # ------------------------------------------------------------
+          - type: name
+            position:
+              cx: 82
+              cy: -45
+            entity_index: 1
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+      # ================================================================
+      - toolset: carte-titre
+        position:
+          cx: 152
+          cy: 10
+        tools:
+          # ------------------------------------------------------------
+          - type: text
+            position:
+              cx: 50
+              cy: 50
+            text: " Énergie Hydro-Québec"
+            styles:
+              text:
+                text-anchor: middle
+                font-size: 15em
+                font-weight: 600
+                opacity: 0.9
+                fill: white
+      # ================================================================
+      - toolset: electricite-production
+        position:
+          cx: 30
+          cy: 111
+        tools:
+          # ------------------------------------------------------------
+          # 
+          - type: rectex
+            position:
+              cx: 50
+              cy: 65
+              width: 40
+              height: 165
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: green
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: icon
+            position:
+              cx: 50
+              cy: -17.5
+              align: center
+              icon_size: 20
+            icon: mdi:transmission-tower-import
+            styles:
+              icon:
+                fill: var(--primary-text-color)
+                # fill: green
+                fill-opacity: 0.9
+                paint-order: stroke
+                stroke-width: 1em
+                stroke: var(--ha-card-background,var(--card-background-color,#fff))
+          # ------------------------------------------------------------
+          - type: sparkline
+            position:
+              cx: 50
+              cy: 65
+              width: 27.5
+              height: 160
+              margin:
+                t: 7.5
+                b: 0
+                x: 0
+                y: 0
+            entity_index: 0
+            period:
+              real_time: true
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+              state_values:
+                aggregate_func: last
+              graded: 
+                row_spacing: 1.5
+                line_width : 1.5
+              colorstops_transition: hard
+              colorstops: 
+                template: 
+                  name: sak_colorstops_mjt_production_demande
+              styles: 
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                  
+          - type: state
+            position:
+              cx: 50
+              cy: 155
+            entity_indexes:
+              - entity_index: 0
+            show:
+              uom: end
+            styles:
+              tool:
+              state:
+                text-anchor: middle
+                font-size: 10em
+                font-weight: 600
+              uom:
+                opacity: 1
+                fill: var(--primary-text-color)
+                font-weight: 400
+##================================================================
+      - toolset: electricite-demande
+        position:
+          cx: 92
+          cy: 111
+        tools:
+          # ------------------------------------------------------------
+          # 
+          - type: rectex
+            position:
+              cx: 50
+              cy: 65
+              width: 40
+              height: 165
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: '#168CCE'
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: icon
+            position:
+              cx: 50
+              cy: -17.5
+              align: center
+              icon_size: 20
+            icon: mdi:transmission-tower-export
+            styles:
+              icon:
+                fill: var(--primary-text-color)
+                fill-opacity: 0.9
+                paint-order: stroke
+                stroke-width: 1em
+                stroke: var(--ha-card-background,var(--card-background-color,#fff))
+          # ------------------------------------------------------------
+          # =
+          - type: sparkline
+            position:
+              cx: 50
+              cy: 65
+              width: 27.5
+              height: 160
+              margin:
+                t: 7.5
+                b: 0
+                x: 0
+                y: 0
+            entity_index: 1
+            period:
+              real_time: true
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+              state_values:
+                aggregate_func: last
+              graded: 
+                row_spacing: 1.5
+                line_width : 1.5
+              colorstops_transition: hard
+              colorstops: 
+                template: 
+                  name: sak_colorstops_mjt_production_demande
+              styles: 
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+
+          - type: state
+            position:
+              cx: 50
+              cy: 155
+            entity_indexes:
+              - entity_index: 1
+            show:
+              uom: end
+            styles:
+              tool:
+              state:
+                text-anchor: middle
+                font-size: 10em
+                font-weight: 600
+              uom:
+                opacity: 1
+                fill: var(--primary-text-color)
+                font-weight: 400
+##================================================================
+      - toolset: retangle-production
+        position:
+          cx: 210
+          cy: 70
+        tools:
+          # ------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 50
+              cy: 105
+              width: 170
+              height: 200
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: url(#sak-green-blue-gradient)
+                stroke-width: 1em
+                fill: none
+##================================================================
+      - toolset: electricite-production-hydrolique
+        position:
+          cx: 150
+          cy: 72
+        tools:
+        
+          # ------------------------------------------------------------
+          - type: name
+            position:
+              cx: 50
+              cy: 11
+            entity_index: 2
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+          # ------------------------------------------------------------
+          # 
+          - type: rectex
+            position:
+              cx: 50
+              cy: 104
+              width: 40
+              height: 165
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: green
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: icon
+            position:
+              cx: 50
+              cy: 20
+              align: center
+              icon_size: 12
+            icon: mdi:hydro-power
+            styles:
+              icon:
+                fill: var(--primary-text-color)
+                # fill: green
+                fill-opacity: 0.9
+                paint-order: stroke
+                stroke-width: 1em
+                stroke: var(--ha-card-background,var(--card-background-color,#fff))
+          # ------------------------------------------------------------
+          - type: sparkline
+            position:
+              cx: 50
+              cy: 103
+              width: 27.5
+              height: 160
+              margin:
+                t: 7.5
+                b: 0
+                x: 0
+                y: 0
+            entity_index: 2
+            period:
+              real_time: true
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+              state_values:
+                aggregate_func: last
+              graded: 
+                row_spacing: 1.5
+                line_width : 1.5
+              colorstops_transition: hard
+              colorstops: 
+                template: 
+                  name: sak_colorstops_mjt_production_demande
+              styles: 
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                  
+          - type: state
+            position:
+              cx: 50
+              cy: 195
+            entity_indexes:
+              - entity_index: 2
+            show:
+              uom: end
+            styles:
+              tool:
+              state:
+                text-anchor: middle
+                font-size: 8em
+                font-weight: 600
+              uom:
+                opacity: 1
+                fill: var(--primary-text-color)
+                font-weight: 400
+##================================================================
+      - toolset: electricite-production-eolienne
+        position:
+          cx: 193
+          cy: 75
+        tools:
+          # ------------------------------------------------------------
+          # 
+          - type: name
+            position:
+              cx: 50
+              cy: 8
+            entity_index: 3
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+          # ------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 50
+              cy: 50
+              width: 30
+              height: 67
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: green
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: icon
+            position:
+              cx: 50
+              cy: 17
+              align: center
+              icon_size: 12
+            icon: mdi:wind-turbine
+            styles:
+              icon:
+                fill: var(--primary-text-color)
+                # fill: green
+                fill-opacity: 0.9
+                paint-order: stroke
+                stroke-width: 1em
+                stroke: var(--ha-card-background,var(--card-background-color,#fff))
+          # ------------------------------------------------------------
+          - type: sparkline
+            position:
+              cx: 50
+              cy: 48
+              width: 20
+              height: 65
+              margin:
+                t: 7.5
+                b: 0
+                x: 0
+                y: 0
+            entity_index: 3
+            period:
+              real_time: true
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+              state_values:
+                aggregate_func: last
+              graded: 
+                row_spacing: 2
+                line_width : 1.5
+              colorstops_transition: hard
+              colorstops: 
+                template: 
+                  name: sak_colorstops_mjt_production
+              styles: 
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                  
+          - type: state
+            position:
+              cx: 50
+              cy: 87
+            entity_indexes:
+              - entity_index: 3
+            show:
+              uom: end
+            styles:
+              tool:
+              state:
+                text-anchor: middle
+                font-size: 5em
+                font-weight: 600
+              uom:
+                opacity: 1
+                fill: var(--primary-text-color)
+                font-weight: 400
+##================================================================
+      - toolset: electricite-production-solaire
+        position:
+          cx: 233
+          cy: 75
+        tools:
+          - type: name
+            position:
+              cx: 50
+              cy: 8
+            entity_index: 4
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+          # ------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 50
+              cy: 50
+              width: 30
+              height: 67
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: green
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: icon
+            position:
+              cx: 50
+              cy: 17
+              align: center
+              icon_size: 12
+            icon: mdi:solar-power-variant
+            styles:
+              icon:
+                fill: var(--primary-text-color)
+                # fill: green
+                fill-opacity: 0.9
+                paint-order: stroke
+                stroke-width: 1em
+                stroke: var(--ha-card-background,var(--card-background-color,#fff))
+          # ------------------------------------------------------------
+          - type: sparkline
+            position:
+              cx: 50
+              cy: 48
+              width: 20
+              height: 65
+              margin:
+                t: 7.5
+                b: 0
+                x: 0
+                y: 0
+            entity_index: 4
+            period:
+              real_time: true
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+              state_values:
+                aggregate_func: last
+              graded: 
+                row_spacing: 2
+                line_width : 1.5
+              colorstops_transition: hard
+              colorstops: 
+                template: 
+                  name: sak_colorstops_mjt_production
+              styles: 
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                  
+          - type: state
+            position:
+              cx: 50
+              cy: 87
+            entity_indexes:
+              - entity_index: 4
+            show:
+              uom: end
+            styles:
+              tool:
+              state:
+                text-anchor: middle
+                font-size: 5em
+                font-weight: 600
+              uom:
+                opacity: 1
+                fill: var(--primary-text-color)
+                font-weight: 400
+##================================================================
+      - toolset: electricite-production-autres
+        position:
+          cx: 273
+          cy: 75
+        tools:
+          - type: name
+            position:
+              cx: 50
+              cy: 8
+            entity_index: 5
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+          # ------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 50
+              cy: 50
+              width: 30
+              height: 67
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: green
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: icon
+            position:
+              cx: 50
+              cy: 17
+              align: center
+              icon_size: 12
+            icon: mdi:home-lightning-bolt-outline
+            styles:
+              icon:
+                fill: var(--primary-text-color)
+                # fill: green
+                fill-opacity: 0.9
+                paint-order: stroke
+                stroke-width: 1em
+                stroke: var(--ha-card-background,var(--card-background-color,#fff))
+          # ------------------------------------------------------------
+          - type: sparkline
+            position:
+              cx: 50
+              cy: 48
+              width: 20
+              height: 65
+              margin:
+                t: 7.5
+                b: 0
+                x: 0
+                y: 0
+            entity_index: 5
+            period:
+              real_time: true
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+              state_values:
+                aggregate_func: last
+              graded: 
+                row_spacing: 2
+                line_width : 1.5
+              colorstops_transition: hard
+              colorstops: 
+                template: 
+                  name: sak_colorstops_mjt_production
+              styles: 
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 13.75
+                  ry: 50%
+                  
+          - type: state
+            position:
+              cx: 50
+              cy: 87
+            entity_indexes:
+              - entity_index: 5
+            show:
+              uom: end
+            styles:
+              tool:
+              state:
+                text-anchor: middle
+                font-size: 5em
+                font-weight: 600
+              uom:
+                opacity: 1
+                fill: var(--primary-text-color)
+                font-weight: 400
+                
+##================================================================
+      - toolset: retangle-graphique-production
+        position:
+          cx: 233
+          cy: 173
+        tools:
+          # ------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 50
+              cy: 50
+              width: 115
+              height: 93
+              radius:
+                all: 2
+            styles:
+              rectex:
+                # stroke: var(--theme-sys-elevation-surface-neutral9)
+                stroke: url(#sak-green-blue-gradient)
+                stroke-width: 1em
+                fill: none
+          # ------------------------------------------------------------
+          - type: name
+            position:
+              cx: 50
+              cy: -2
+            entity_index: 0
+            styles:
+              name:
+                text-anchor: center
+                font-size: 5em
+                font-weight: 700
+                opacity: 1
+##================================================================          
+      - toolset: graph-production
+        position:
+          cx: 233
+          cy: 173
+        tools:
+          # ------------------------------------------------------------
+          - type: sparkline
+            position: 
+              cx: 50
+              cy: 50
+              width: 100
+              height: 83
+            entity_index: 0
+            period:
+             rolling_window:
+               duration:
+                 hour: 48
+               bins: 
+                 per_hour: 1
+            sparkline:
+              animate: true
+              show:
+                chart_type: graded
+                chart_variant: rank_order
+                fill: fade
+              state_values:
+                aggregate_func: avg
+              area:
+                line_width : 1.5
+              bar:
+                line_width : 0.1
+                colum_spacing: 1
+              dots:
+                line_width: 2
+              equalizer:
+                value_buckets: 5
+              graded:
+                square: true
+                line_width : 1.5
+              line:
+                line_width : 1.5
+              x_lines:
+                lines:
+                  - name: x_axis
+                    zpos: below 
+                    yshift: 15
+                  - name: ticks
+                    zpos: below 
+                    yshift: 16
+              colorstops_transition: hard
+              colorstops:
+                template:
+                  name: sak_colorstops_mjt_production_demande
+              styles: 
+                barcode_graph:
+                  rx: 50%
+                  ry: 5%
+                graded_background:
+                  transition: fill 2s ease
+                  rx: 50%
+                  ry: 50%
+                graded_foreground:
+                  transition: fill 2s ease
+                  rx: 50%
+                  ry: 50%
+                x_axis:
+                  stroke: var(--theme-sys-elevation-surface-neutral6)
+                  stroke-width: 0.2rem
+                ticks:
+                  stroke: var(--theme-sys-elevation-surface-neutral6)
+                  stroke-dasharray: 2, 117.5
+                  stroke-dashoffset: 0
+                  stroke-width: 0.75rem

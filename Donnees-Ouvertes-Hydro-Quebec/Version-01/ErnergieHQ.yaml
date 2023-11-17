@@ -1,0 +1,724 @@
+
+  - type: custom:vertical-stack-in-card
+    cards:
+        
+      - type: custom:text-divider-row
+        text: "Porduction et Demande"
+        align: left
+
+      - type: horizontal-stack
+        cards:
+          ############  Production   ##############
+
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.electricite_production_total
+                decimals: 0
+                unit: Kw
+                area: Production
+                name: "35000"
+                icon: mdi:transmission-tower-import
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 2.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 40
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+              icons:
+                - id: 0
+                  xpos: 50
+                  ypos: 25
+                  entity_index: 0
+                  icon_size: 2.5
+                  styles:
+                    - color: var(--primary-text-color);
+              names:
+                - id: 0
+                  xpos: 83
+                  ypos: 90
+                  entity_index: 0
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+
+            horseshoe_scale:
+              min: 0
+              max: 35000
+
+            color_stops:
+              14000: "#06AFFD"
+              15000: "#07D7FC"
+              16000: "#07FCF8"
+              17000: "#08FBD2"
+              18000: "#0AFAAA"
+              19000: "#0BF86E"
+              20000: "#50F40A"
+              21000: "#9EF30B"
+              22000: "#D3F20C"
+              23000: "#F0E90E"
+              24000: "#EFC20F"
+              25000: "#EF9D0F	"
+              26000: "#EE7B10"
+              27000: "#ED5711"
+              28000: "#CA430E"
+              29000: "#BA3B0D"
+              30000: "#94260A"
+              31000: "#8A210A"
+              32000: "#811C09"
+              33000: "#800000"
+
+          ############  Production Demande ##############
+
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: false
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              colorize_states: true
+              title: "Production Demande"
+            graph_span: 10d
+            apex_config:
+              chart:
+                height: 240px
+            series:
+              - entity: sensor.electricite_production_total
+                name: "Production"
+                type: area
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 5
+                show:
+                  extremas: true
+                  header_color_threshold: true
+                  name_in_header: true
+                  legend_value: false
+                color_threshold:
+                  - value: 14000
+                    color: "#06AFFD"
+                  - value: 15000
+                    color: "#07D7FC"
+                  - value: 16000
+                    color: "#07FCF8"
+                  - value: 17000
+                    color: "#08FBD2"
+                  - value: 18000
+                    color: "#0AFAAA"
+                  - value: 19000
+                    color: "#0BF86E"
+                  - value: 20000
+                    color: "#50F40A"
+                  - value: 21000
+                    color: "#9EF30B"
+                  - value: 22000
+                    color: "#D3F20C"
+                  - value: 23000
+                    color: "#F0E90E"
+                  - value: 24000
+                    color: "#EFC20F"
+                  - value: 25000
+                    color: "#EF9D0F	"
+                  - value: 26000
+                    color: "#EE7B10"
+                  - value: 27000
+                    color: "#ED5711"
+                  - value: 28000
+                    color: "#CA430E"
+                  - value: 29000
+                    color: "#BA3B0D"
+                  - value: 30000
+                    color: "#94260A"
+                  - value: 31000
+                    color: "#8A210A"
+                  - value: 32000
+                    color: "#811C09"
+                  - value: 33000
+                    color: "#800000"
+
+              - entity: sensor.demande_electricite_hydro
+                name: "Demande"
+                type: line
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 5
+                show:
+                  extremas: true
+                  header_color_threshold: false
+                  name_in_header: true
+                  legend_value: false
+
+          ############  Demande  ##############
+
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.demande_electricite_hydro
+                decimals: 0
+                unit: Kw
+                area: Demandes
+                name: "35000"
+                icon: mdi:transmission-tower-export
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 2.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 40
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+              icons:
+                - id: 0
+                  xpos: 50
+                  ypos: 25
+                  entity_index: 0
+                  icon_size: 2.5
+                  styles:
+                    - color: var(--primary-text-color);
+              names:
+                - id: 0
+                  xpos: 83
+                  ypos: 90
+                  entity_index: 0
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+            horseshoe_scale:
+              min: 0
+              max: 35000
+            color_stops:
+              14000: "#06AFFD"
+              15000: "#07D7FC"
+              16000: "#07FCF8"
+              17000: "#08FBD2"
+              18000: "#0AFAAA"
+              19000: "#0BF86E"
+              20000: "#50F40A"
+              21000: "#9EF30B"
+              22000: "#D3F20C"
+              23000: "#F0E90E"
+              24000: "#EFC20F"
+              25000: "#EF9D0F	"
+              26000: "#EE7B10"
+              27000: "#ED5711"
+              28000: "#CA430E"
+              29000: "#BA3B0D"
+              30000: "#94260A"
+              31000: "#8A210A"
+              32000: "#811C09"
+              33000: "#800000"
+
+      - type: custom:text-divider-row
+        text: "Porduction Hydraulique et Éolienne"
+        align: left
+
+      - type: horizontal-stack
+        cards:
+          ############  Hydraulique   ##############
+
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.electricite_production_hydraulique
+                decimals: 0
+                unit: Kw
+                area: Hydraulique
+                name: "35000"
+                icon: mdi:hydro-power
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 2.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 40
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+              icons:
+                - id: 0
+                  xpos: 50
+                  ypos: 25
+                  entity_index: 0
+                  icon_size: 2.5
+                  styles:
+                    - color: var(--primary-text-color);
+              names:
+                - id: 0
+                  xpos: 83
+                  ypos: 90
+                  entity_index: 0
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+
+            horseshoe_scale:
+              min: 0
+              max: 35000
+            color_stops:
+              14000: "#06AFFD"
+              15000: "#07D7FC"
+              16000: "#07FCF8"
+              17000: "#08FBD2"
+              18000: "#0AFAAA"
+              19000: "#0BF86E"
+              20000: "#50F40A"
+              21000: "#9EF30B"
+              22000: "#D3F20C"
+              23000: "#F0E90E"
+              24000: "#EFC20F"
+              25000: "#EF9D0F	"
+              26000: "#EE7B10"
+              27000: "#ED5711"
+              28000: "#CA430E"
+              29000: "#BA3B0D"
+              30000: "#94260A"
+              31000: "#8A210A"
+              32000: "#811C09"
+              33000: "#800000"
+
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: false
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              colorize_states: true
+              title: "Hydraulique"
+            graph_span: 10d
+            apex_config:
+              chart:
+                height: 150px
+            series:
+              - entity: sensor.electricite_production_hydraulique
+                name: "Énergie quotidienne"
+                type: area
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 5
+                show:
+                  extremas: true
+                  header_color_threshold: true
+                  name_in_header: true
+                  legend_value: false
+                color_threshold:
+                  - value: 14000
+                    color: "#06AFFD"
+                  - value: 15000
+                    color: "#07D7FC"
+                  - value: 16000
+                    color: "#07FCF8"
+                  - value: 17000
+                    color: "#08FBD2"
+                  - value: 18000
+                    color: "#0AFAAA"
+                  - value: 19000
+                    color: "#0BF86E"
+                  - value: 20000
+                    color: "#50F40A"
+                  - value: 21000
+                    color: "#9EF30B"
+                  - value: 22000
+                    color: "#D3F20C"
+                  - value: 23000
+                    color: "#F0E90E"
+                  - value: 24000
+                    color: "#EFC20F"
+                  - value: 25000
+                    color: "#EF9D0F	"
+                  - value: 26000
+                    color: "#EE7B10"
+                  - value: 27000
+                    color: "#ED5711"
+                  - value: 28000
+                    color: "#CA430E"
+                  - value: 29000
+                    color: "#BA3B0D"
+                  - value: 30000
+                    color: "#94260A"
+                  - value: 31000
+                    color: "#8A210A"
+                  - value: 32000
+                    color: "#811C09"
+                  - value: 33000
+                    color: "#800000"
+
+          ############  Éolienne   ##############
+
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.electricite_production_eolien
+                decimals: 0
+                unit: Kw
+                area: Éolienne
+                name: "2000"
+                icon: mdi:wind-turbine
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 2.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 40
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+              icons:
+                - id: 0
+                  xpos: 50
+                  ypos: 25
+                  entity_index: 0
+                  icon_size: 2.5
+                  styles:
+                    - color: var(--primary-text-color);
+              names:
+                - id: 0
+                  xpos: 83
+                  ypos: 90
+                  entity_index: 0
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+
+            horseshoe_scale:
+              min: 0
+              max: 2000
+            color_stops:
+              1: "#06AFFD"
+              100: "#07FCF8"
+              200: "#0AFAAA"
+              300: "#50F40A"
+              400: "#D3F20C"
+              500: "#EFC20F"
+              600: "#EE7B10"
+              700: "#CA430E"
+              800: "#94260A"
+              900: "#811C09"
+              1000: "#800000"
+
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: false
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              colorize_states: true
+              title: "Éolienne"
+            graph_span: 10d
+            apex_config:
+              chart:
+                height: 150px
+            series:
+              - entity: sensor.electricite_production_eolien
+                name: "Énergie quotidienne"
+                type: area
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 5
+                show:
+                  extremas: true
+                  header_color_threshold: true
+                  name_in_header: true
+                  legend_value: false
+                color_threshold:
+                  - value: 1
+                    color: "#06AFFD"
+                  - value: 100
+                    color: "#07FCF8"
+                  - value: 200
+                    color: "#0AFAAA"
+                  - value: 300
+                    color: "#50F40A"
+                  - value: 400
+                    color: "#D3F20C"
+                  - value: 500
+                    color: "#EFC20F"
+                  - value: 600
+                    color: "#EE7B10"
+                  - value: 700
+                    color: "#CA430E"
+                  - value: 800
+                    color: "#94260A"
+                  - value: 900
+                    color: "#811C09"
+                  - value: 1000
+                    color: "#800000"
+
+      - type: custom:text-divider-row
+        text: "Porduction Solaire et Autres"
+        align: left
+
+      - type: horizontal-stack
+        cards:
+          ############  Solaire   ##############
+
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.electricite_production_solaire
+                decimals: 0
+                unit: Kw
+                area: Solaire
+                name: "2000"
+                icon: mdi:solar-power-variant
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 2.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 40
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+              icons:
+                - id: 0
+                  xpos: 50
+                  ypos: 25
+                  entity_index: 0
+                  icon_size: 2.5
+                  styles:
+                    - color: var(--primary-text-color);
+              names:
+                - id: 0
+                  xpos: 83
+                  ypos: 90
+                  entity_index: 0
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+
+            horseshoe_scale:
+              min: 0
+              max: 2000
+            color_stops:
+              1: "#06AFFD"
+              100: "#07FCF8"
+              200: "#0AFAAA"
+              300: "#50F40A"
+              400: "#D3F20C"
+              500: "#EFC20F"
+              600: "#EE7B10"
+              700: "#CA430E"
+              800: "#94260A"
+              900: "#811C09"
+              1000: "#800000"
+
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: false
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              colorize_states: true
+              title: "Solaire"
+            graph_span: 10d
+            apex_config:
+              chart:
+                height: 150px
+            series:
+              - entity: sensor.electricite_production_solaire
+                name: "Énergie quotidienne"
+                type: area
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 5
+                show:
+                  extremas: true
+                  header_color_threshold: true
+                  name_in_header: true
+                  legend_value: false
+                color_threshold:
+                  - value: 1
+                    color: "#06AFFD"
+                  - value: 100
+                    color: "#07FCF8"
+                  - value: 200
+                    color: "#0AFAAA"
+                  - value: 300
+                    color: "#50F40A"
+                  - value: 400
+                    color: "#D3F20C"
+                  - value: 500
+                    color: "#EFC20F"
+                  - value: 600
+                    color: "#EE7B10"
+                  - value: 700
+                    color: "#CA430E"
+                  - value: 800
+                    color: "#94260A"
+                  - value: 900
+                    color: "#811C09"
+                  - value: 1000
+                    color: "#800000"
+
+          ############ Autres   ##############
+
+          - type: custom:flex-horseshoe-card
+            entities:
+              - entity: sensor.electricite_production_autres
+                decimals: 0
+                unit: Kw
+                area: Autres
+                name: "2000"
+                icon: mdi:home-lightning-bolt-outline
+            show:
+              horseshoe_style: colorstopgradient
+            layout:
+              states:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 60
+                  styles:
+                    - font-size: 2.5em;
+              areas:
+                - id: 0
+                  entity_index: 0
+                  xpos: 50
+                  ypos: 40
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+              icons:
+                - id: 0
+                  xpos: 50
+                  ypos: 25
+                  entity_index: 0
+                  icon_size: 2.5
+                  styles:
+                    - color: var(--primary-text-color);
+              names:
+                - id: 0
+                  xpos: 83
+                  ypos: 90
+                  entity_index: 0
+                  styles:
+                    - font-size: 1em;
+                    - opacity: 0.8;
+
+            horseshoe_scale:
+              min: 0
+              max: 2000
+            color_stops:
+              1: "#06AFFD"
+              100: "#07FCF8"
+              200: "#0AFAAA"
+              300: "#50F40A"
+              400: "#D3F20C"
+              500: "#EFC20F"
+              600: "#EE7B10"
+              700: "#CA430E"
+              800: "#94260A"
+              900: "#811C09"
+              1000: "#800000"
+
+          - type: custom:apexcharts-card
+            experimental:
+              color_threshold: true
+            show:
+              last_updated: false
+            header:
+              standard_format: false
+              show: true
+              show_states: true
+              colorize_states: true
+              title: "Autres"
+            graph_span: 10d
+            apex_config:
+              chart:
+                height: 150px
+            series:
+              - entity: sensor.electricite_production_autres
+                name: "Énergie quotidienne"
+                type: area
+                group_by:
+                  func: last
+                  duration: 1d
+                stroke_width: 5
+                show:
+                  extremas: true
+                  header_color_threshold: true
+                  name_in_header: true
+                color_threshold:
+                  - value: 1
+                    color: "#06AFFD"
+                  - value: 100
+                    color: "#07FCF8"
+                  - value: 200
+                    color: "#0AFAAA"
+                  - value: 300
+                    color: "#50F40A"
+                  - value: 400
+                    color: "#D3F20C"
+                  - value: 500
+                    color: "#EFC20F"
+                  - value: 600
+                    color: "#EE7B10"
+                  - value: 700
+                    color: "#CA430E"
+                  - value: 800
+                    color: "#94260A"
+                  - value: 900
+                    color: "#811C09"
+                  - value: 1000
+                    color: "#800000"

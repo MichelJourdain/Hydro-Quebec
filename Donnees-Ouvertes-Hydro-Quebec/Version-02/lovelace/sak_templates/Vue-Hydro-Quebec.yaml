@@ -1,0 +1,551 @@
+# Vue Hydro-Québec
+
+theme: MonTableau
+title: Maison
+path: vue-page-hydro-quebec
+icon: ios:hydro-quebec#fullcolor
+type: panel
+badges: []
+cards:
+  - type: custom:dwains-flexbox-card
+    items_classes: col-xs-12
+    cards:
+    
+      - type: custom:swiss-army-knife-card
+        disable_card: true
+        layout:
+          template:
+            name: sak_layout_mjt_barre_pieces
+            variables:
+              - sak_layout_mjt_barre_pieces_titre: 'Hydro-Québec'
+              - sak_layout_mjt_barre_pieces_image: '/local/mes_images/hydro-quebec.svg'
+
+      - type: custom:tabbed-card
+        styles:
+          --mdc-theme-primary: yellow
+          --mdc-tab-text-label-color-default: lightblue
+        options: {}
+        tabs:
+          - card:
+              type: custom:dwains-flexbox-card
+              items_classes: "col-xs-12"
+              cards:
+                - type: custom:vertical-stack-in-card
+                  item_classes: "col-xs-12 col-sm-4"
+                  cards:
+                    - type: custom:swiss-army-knife-card
+                      disable_card: true
+                      layout:
+                        template:
+                          name: sak_layout_fce_header
+                          variables:
+                            - sak_layout_header_content: "Période actuelle"
+                            - sak_layout_header_font_color: var(--secondary-text-color)
+                            - sak_layout_header_font_size: 5em
+                            - sak_layout_header_font_text_transform: capitalize
+
+                    - type: custom:swiss-army-knife-card
+                      entities:
+                        - entity: sensor.hydroqc_maison_number_of_winter_days
+                          area: "Jours d'hiver"
+                          icon: mdi:weather-snowy-heavy
+                        - entity: sensor.hydroqc_maison_current_billing_period_current_day
+                          area: "Actuel"
+                          icon: mdi:calendar
+                        - entity: sensor.hydroqc_maison_current_billing_period_duration
+                          icon: mdi:calendar-month-outline
+                        - entity: sensor.hydroqc_maison_number_of_critical_hours
+                          area: "Hrs de pointes"
+                          icon: mdi:clock-time-four-outline
+                      layout:
+                        template:
+                          name: sak_layout_mjt_periode_actuelle
+
+                    - type: custom:apexcharts-card
+                      experimental:
+                        color_threshold: true
+                      show:
+                        last_updated: false
+                      header:
+                        standard_format: false
+                        show: true
+                        show_states: true
+                        colorize_states: true
+                        title: Température
+                      graph_span: 10d
+                      apex_config:
+                        chart:
+                          height: 260px
+                      series:
+                        - entity: sensor.tempest_st_00032986_temperature
+                          name: Température
+                          type: line
+                          group_by:
+                            func: last
+                            duration: 1d
+                          stroke_width: 5
+                          show:
+                            extremas: true
+                            header_color_threshold: false
+                            legend_value: false
+                        - entity: sensor.hydroqc_maison_current_billing_period_average_temperature
+                          name: "Moyenne"
+                          type: area
+                          group_by:
+                            func: last
+                            duration: 1d
+                          stroke_width: 5
+                          show:
+                            extremas: true
+                            header_color_threshold: true
+                            name_in_header: true
+                            legend_value: false
+                          color_threshold:
+                            - value: 10
+                              color: "#87E990"
+                            - value: 9
+                              color: "#54F98D"
+                            - value: 8
+                              color: "#9FE855"
+                            - value: 7
+                              color: "#568203"
+                            - value: 6
+                              color: "#18391E"
+                            - value: 5
+                              color: "#FFE4C4"
+                            - value: 4
+                              color: "#EF9B0F"
+                            - value: 3
+                              color: "#FAA401"
+                            - value: 2
+                              color: "#F3D617"
+                            - value: 1
+                              color: "#FFF48D"
+                            - value: 0
+                              color: "#FFFF6B"
+                            - value: -1
+                              color: "#F7FF3C"
+                            - value: -2
+                              color: "#FFFF00"
+                            - value: -3
+                              color: "#77B5FE"
+                            - value: -4
+                              color: "#318CE7"
+                            - value: -5
+                              color: "#2C75FF"
+                            - value: -6
+                              color: "#0F056B"
+                            - value: -7
+                              color: "#FF4901"
+                            - value: -8
+                              color: "#ED0000"
+                            - value: -9
+                              color: "#FF0000"
+                            - value: -10
+                              color: "#BB0B0B"
+
+                    - type: custom:swiss-army-knife-card
+                      disable_card: true
+                      layout:
+                        template:
+                          name: sak_layout_fce_header
+                          variables:
+                            - sak_layout_header_content: "Paiements"
+                            - sak_layout_header_font_color: var(--secondary-text-color)
+                            - sak_layout_header_font_size: 5em
+                            - sak_layout_header_font_text_transform: capitalize
+
+                    - type: glance
+                      show_name: true
+                      show_icon: true
+                      show_state: true
+                      entities:
+                        - entity: sensor.hydroqc_maison_balance
+                          name: "Coûts"
+                        - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
+                          name: "Réel"
+                        - entity: sensor.hydroqc_maison_net_saving_loss_vs_rate_d
+                          name: "FlexD"
+
+                - type: custom:vertical-stack-in-card
+                  item_classes: "col-xs-12 col-sm-4"
+                  cards:
+                    - type: custom:swiss-army-knife-card
+                      disable_card: true
+                      layout:
+                        template:
+                          name: sak_layout_fce_header
+                          variables:
+                            - sak_layout_header_content: "kWh"
+                            - sak_layout_header_font_color: var(--secondary-text-color)
+                            - sak_layout_header_font_size: 5em
+                            - sak_layout_header_font_text_transform: capitalize
+
+                    - type: custom:swiss-army-knife-card
+                      entities:
+                        - entity: sensor.hydroqc_maison_current_billing_period_total_consumption
+                          area: "Total"
+                          icon: mdi:home-lightning-bolt
+                        - entity: sensor.hydroqc_maison_current_billing_period_lower_price_consumption
+                          area: "Normale"
+                          icon: mdi:home-minus
+                        - entity: sensor.hydroqc_maison_current_billing_period_higher_price_consumption
+                          area: "Pointe"
+                          icon: mdi:home-plus
+                        - entity: sensor.hydroqc_maison_current_billing_period_projected_total_consumption
+                          area: "Prévus"
+                          icon: mdi:flash
+
+                      layout:
+                        template:
+                          name: sak_layout_mjt_kwh_total_regulier_pointe
+
+                    - type: custom:apexcharts-card
+                      experimental:
+                        color_threshold: true
+                      show:
+                        last_updated: false
+                      header:
+                        standard_format: false
+                        show: true
+                        show_states: true
+                        colorize_states: true
+                        title: Coûts
+                      graph_span: 10d
+                      apex_config:
+                        chart:
+                          height: 260px
+                      series:
+                        - entity: sensor.hydroqc_maison_current_billing_period_projected_bill
+                          name: Prévisions
+                          type: line
+                          group_by:
+                            func: last
+                            duration: 1d
+                          stroke_width: 5
+                          show:
+                            extremas: true
+                            header_color_threshold: true
+                            legend_value: false
+                          color_threshold:
+                            - value: 0
+                              color: "#149414"
+                            - value: 50
+                              color: "#00FF00"
+                            - value: 100
+                              color: "#FFFF6B"
+                            - value: 150
+                              color: "#FFFF05"
+                            - value: 200
+                              color: "#FF0000"
+                            - value: 250
+                              color: "#A91101"
+                              
+                        - entity: sensor.hydroqc_maison_current_billing_period_total_to_date
+                          name: Actuel
+                          type: area
+                          group_by:
+                            func: last
+                            duration: 1d
+                          stroke_width: 5
+                          show:
+                            extremas: true
+                            header_color_threshold: true
+                            legend_value: false
+                          color_threshold:
+                            - value: 0
+                              color: "#149414"
+                            - value: 50
+                              color: "#00FF00"
+                            - value: 100
+                              color: "#FFFF6B"
+                            - value: 150
+                              color: "#FFFF05"
+                            - value: 200
+                              color: "#FF0000"
+                            - value: 250
+                              color: "#A91101"
+
+                    - type: custom:swiss-army-knife-card
+                      disable_card: true
+                      layout:
+                        template:
+                          name: sak_layout_fce_header
+                          variables:
+                            - sak_layout_header_content: "États actuels"
+                            - sak_layout_header_font_color: var(--secondary-text-color)
+                            - sak_layout_header_font_size: 5em
+                            - sak_layout_header_font_text_transform: capitalize
+
+                    - type: glance
+                      show_name: true
+                      show_icon: true
+                      show_state: true
+                      entities:
+                        - entity: sensor.etat_hydroqc_maison_next_or_current_outage
+                          name: "Panne"
+                        - entity: sensor.etat_hydroqc_maison_current_dpc_period_detail
+                          name: "Tarif"
+                        - entity: binary_sensor.hydroqc_maison_critical_peak_in_progress
+                          name: "Pointe"
+
+                - type: custom:vertical-stack-in-card
+                  item_classes: "col-xs-12 col-sm-4"
+                  cards:
+                    - type: custom:swiss-army-knife-card
+                      disable_card: true
+                      layout:
+                        template:
+                          name: sak_layout_fce_header
+                          variables:
+                            - sak_layout_header_content: "Moyennes périodiques"
+                            - sak_layout_header_font_color: var(--secondary-text-color)
+                            - sak_layout_header_font_size: 5em
+                            - sak_layout_header_font_text_transform: capitalize
+
+                    - type: custom:swiss-army-knife-card
+                      entities:
+                        - entity: sensor.hydroqc_maison_current_billing_period_daily_bill_mean
+                          area: "Coût"
+                          decimals: 2
+                        - entity: sensor.hydroqc_maison_current_billing_period_daily_consumption_mean
+                          area: "kWh Jour"
+                        - entity: sensor.hydroqc_maison_current_billing_period_kwh_cost_mean
+                          area: "Coût kWh"
+                          decimals: 2
+                      layout:
+                        template:
+                          name: sak_layout_mjt_moyennes
+
+                    - type: custom:apexcharts-card
+                      experimental:
+                        color_threshold: true
+                      show:
+                        last_updated: false
+                      header:
+                        standard_format: false
+                        show: true
+                        show_states: true
+                        colorize_states: true
+                        title: Consommation kWh
+                      graph_span: 10d
+                      apex_config:
+                        chart:
+                          height: 260px
+                      series:
+                        - entity: sensor.hydroqc_maison_current_billing_period_projected_total_consumption
+                          name: Prévisions
+                          type: line
+                          group_by:
+                            func: last
+                            duration: 1d
+                          stroke_width: 5
+                          show:
+                            extremas: true
+                            header_color_threshold: true
+                            legend_value: false
+                          color_threshold:
+                            - value: 800
+                              color: "#149414"
+                            - value: 1000
+                              color: "#00FF00"
+                            - value: 1200
+                              color: "#FEF86C"
+                            - value: 1400
+                              color: "#FFFF6B"
+                            - value: 1600
+                              color: "#FF0000"
+                            - value: 1800
+                              color: "#A91101"
+                        - entity: sensor.hydroqc_maison_current_billing_period_total_consumption
+                          name: Actuel
+                          type: area
+                          group_by:
+                            func: last
+                            duration: 1d
+                          stroke_width: 5
+                          show:
+                            extremas: true
+                            header_color_threshold: true
+                            legend_value: false
+                          color_threshold:
+                            - value: 800
+                              color: "#149414"
+                            - value: 1000
+                              color: "#00FF00"
+                            - value: 1200
+                              color: "#FEF86C"
+                            - value: 1400
+                              color: "#FFFF6B"
+                            - value: 1600
+                              color: "#FF0000"
+                            - value: 1800
+                              color: "#A91101"
+                              
+                    - type: custom:swiss-army-knife-card
+                      disable_card: true
+                      layout:
+                        template:
+                          name: sak_layout_fce_header
+                          variables:
+                            - sak_layout_header_content: "Périodes de pointes"
+                            - sak_layout_header_font_color: var(--secondary-text-color)
+                            - sak_layout_header_font_size: 5em
+                            - sak_layout_header_font_text_transform: capitalize
+
+                    - type: glance
+                      show_name: true
+                      show_icon: true
+                      show_state: true
+                      entities:
+                        - entity: binary_sensor.hydroqc_maison_pre_heat_in_progress
+                          name: "Réchauffage"
+                        - entity: sensor.etat_hydroqc_maison_next_peak_start
+                          name: "Début"
+                        - entity: sensor.etat_hydroqc_maison_next_peak_end
+                          name: "Fin"
+                          state_color: true
+
+            attributes:
+              icon: mdi:home-lightning-bolt
+              label: Maison
+
+          - card:
+              type: custom:dwains-flexbox-card
+              items_classes: "col-xs-12"
+              cards:
+                - type: custom:dwains-flexbox-card
+                  items_classes: "col-xs-12 col-sm-6"
+                  cards:
+                    - type: vertical-stack
+                      cards:
+                        - type: custom:swiss-army-knife-card
+                          entities:
+                            - entity: sensor.electricite_production_total
+                              name: "Production"
+                              decimals: 0
+                              icon: mdi:transmission-tower-import
+                            - entity: sensor.demande_electricite_hydro
+                              name: "Demande"
+                              decimals: 0
+                              icon: mdi:transmission-tower-export
+                          layout:
+                            template:
+                              name: sak_layout_mjt_production_demande
+
+                        - !include ../Cartes/Carte-Energie-Mensuel.yaml
+
+                    - type: vertical-stack
+                      cards:
+                        - !include ../Cartes/Carte-Energie-Productions-Demandes.yaml
+
+                        - type: horizontal-stack
+                          cards:
+                            - type: "custom:swiss-army-knife-card"
+                              entities:
+                                - entity: sensor.electricite_production_hydraulique
+                                  name: "Hydraulique"
+                                  icon: mdi:hydro-power
+                                  decimals: 0
+                              layout:
+                                template:
+                                  name: sak_layout_fce_sensor1
+                                  variables:
+                                    - sak_layout_sensor_name_above_state: false
+                                    - sak_layout_sensor_scale_max: 40000
+
+                            - type: "custom:swiss-army-knife-card"
+                              entities:
+                                - entity: sensor.electricite_production_eolien
+                                  name: "Éolien"
+                                  icon: mdi:wind-turbine
+                                  decimals: 0
+                              layout:
+                                template:
+                                  name: sak_layout_fce_sensor1
+                                  variables:
+                                    - sak_layout_sensor_name_above_state: false
+                                    - sak_layout_sensor_scale_max: 3500
+
+                        - type: horizontal-stack
+                          cards:
+                            - type: "custom:swiss-army-knife-card"
+                              entities:
+                                - entity: sensor.electricite_production_solaire
+                                  name: "Solaire"
+                                  icon: mdi:solar-power-variant
+                                  decimals: 0
+                              layout:
+                                template:
+                                  name: sak_layout_fce_sensor1
+                                  variables:
+                                    - sak_layout_sensor_name_above_state: false
+                                    - sak_layout_sensor_scale_max: 500
+
+#                            - type: "custom:swiss-army-knife-card"
+#                              entities:
+#                                - entity: sensor.electricite_production_thermique
+#                                  name: "Thermique"
+#                                  icon: mdi:factory
+#                                  decimals: 0
+#                              layout:
+#                                template:
+#                                  name: sak_layout_fce_sensor1
+#                                  variables:
+#                                    - sak_layout_sensor_name_above_state: false
+#                                    - sak_layout_sensor_scale_max: 1000
+
+                        - type: horizontal-stack
+                          cards:
+                            - type: "custom:swiss-army-knife-card"
+                              entities:
+                                - entity: sensor.electricite_production_autres
+                                  name: "Autres"
+                                  icon: mdi:home-lightning-bolt
+                                  decimals: 0
+                              layout:
+                                template:
+                                  name: sak_layout_fce_sensor1
+                                  variables:
+                                    - sak_layout_sensor_name_above_state: false
+                                    - sak_layout_sensor_scale_max: 1000
+
+                            - type: "custom:swiss-army-knife-card"
+                              entities:
+                                - entity: sensor.electricite_production_total
+                                  name: "Total"
+                                  icon: mdi:home-lightning-bolt-outline
+                                  decimals: 0
+                              layout:
+                                template:
+                                  name: sak_layout_fce_sensor1
+                                  variables:
+                                    - sak_layout_sensor_name_above_state: false
+                                    - sak_layout_sensor_scale_max: 40000
+
+            attributes:
+              icon: mdi:hydro-power
+              label: Hydro-Québec
+              
+          - card:              
+                type: 'custom:swiss-army-knife-card'
+                entities:
+                  - entity: sensor.electricite_production_total         # Production d'électricité
+                    name: 'Production'
+                  - entity: sensor.demande_electricite_hydro            # Demande d'électricité
+                    name: 'Demande'
+                  - entity: sensor.electricite_production_hydraulique   # Production hydraulique
+                    name: 'Hydrolique'
+                  - entity: sensor.electricite_production_eolien        # Production éolienne
+                    name: 'Éolienne'
+                  - entity: sensor.electricite_production_solaire       # Production solaire
+                    name: 'Solaire'
+                  - entity: sensor.electricite_production_autres        # Production autre
+                    name: 'Autres'
+                layout:
+                  template:
+                    name: sak_layout_mjt_hydro_quebec
+                    
+            attributes:
+              icon: mdi:transmission-tower
+              label: Hydro

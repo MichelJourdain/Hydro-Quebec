@@ -1,0 +1,23 @@
+              - type: 'custom:swiss-army-knife-card'
+                entities:
+                  - entity: sensor.electricite_production_total         # Production d'électricité
+                    name: 'Production'
+                    decimals: 0
+                  - entity: sensor.demande_electricite_hydro            # Demande d'électricité
+                    name: 'Demande'
+                    decimals: 0
+                  - entity: sensor.electricite_production_hydraulique   # Production hydraulique
+                    name: 'Hydraulique'
+                    decimals: 0
+                  - entity: sensor.electricite_production_eolien        # Production éolienne
+                    name: 'Éolienne'
+                    decimals: 0
+                  - entity: sensor.electricite_production_solaire       # Production solaire
+                    name: 'Solaire'
+                    decimals: 0
+                  - entity: sensor.electricite_production_autres        # Production autre
+                    name: 'Autres'
+                    decimals: 0
+                layout:
+                  template:
+                    name: sak_layout_mjt_hydro_quebec

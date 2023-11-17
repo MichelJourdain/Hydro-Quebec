@@ -1,0 +1,32 @@
+sak_colorstops_mjt_production:
+  template:
+    type: colorstops
+    defaults:
+      - dummy: 0
+  colorstops:
+    colors:
+      - value: 1
+        color: '#06AFFD'  
+      - value: 100
+        color: '#07FCF8' 
+      - value: 200
+        color: '#0AFAAA'  
+      - value: 300
+        color: '#50F40A' 
+      - value: 400
+        color: '#D3F20C'  
+      - value: 500
+        color: '#EFC20F'  
+      - value: 600
+        color: '#EE7B10'  
+      - value: 700
+        color: '#CA430E'  
+      - value: 800
+        color: '#94260A' 
+      - value: 900
+        color: '#811C09'
+      - value: 1000
+        color: '#800000' 
+
+ 
+        
