@@ -11,4 +11,5 @@
 
 ### Captures d'écran
 
-![image](https://github.com/MichelJourdain/ErnergieHQ/assets/83040228/ec420bdb-06fd-49d7-97e3-df3a93beef21)
+![image](https://github.com/MichelJourdain/Hydro-Quebec/assets/83040228/6b38d6b3-b872-4e50-bfcf-282415389ad3)
+
