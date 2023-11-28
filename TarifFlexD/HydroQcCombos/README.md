@@ -4,8 +4,9 @@
 
 - Install [Hydroqc Add-on](https://hydroqc.ca/fr/docs/installation/hass-addon/) 
 - Install [Swiss Army Knife Custom Card](https://github.com/amoebelabs/swiss-army-knife-card/).
-- Install vertical-stack-in-card from [HACS]
-- Install Apexcharts-card from [HACS] 
+- Install [vertical-stack-in-card](https://github.com/ofekashery/vertical-stack-in-card) from [HACS]
+- Install [Apexcharts-card](https://github.com/RomRider/apexcharts-card) from [HACS]
+- Install [Tabbed-card](https://github.com/kinghat/tabbed-card) from  [HACS]
 - Copy the folowing templates in /config/lovelace/sak_templates/templates/layouts/ directory
   - sak-layout-mjt-kwh-total-regulier-pointe.yaml
   - sak-layout-mjt-moyennes.yaml
