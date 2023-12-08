@@ -3,7 +3,7 @@
     cards:
         
       - type: custom:text-divider-row
-        text: "Porduction et Demande"
+        text: "Production et Demande"
         align: left
 
       - type: horizontal-stack
