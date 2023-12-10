@@ -234,7 +234,7 @@
               33000: "#800000"
 
       - type: custom:text-divider-row
-        text: "Porduction Hydraulique et Éolienne"
+        text: "Production Hydraulique et Éolienne"
         align: left
 
       - type: horizontal-stack
