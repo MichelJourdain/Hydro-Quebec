@@ -1,4 +1,3 @@
-
   - type: custom:vertical-stack-in-card
     cards:
         
@@ -493,7 +492,7 @@
                     color: "#800000"
 
       - type: custom:text-divider-row
-        text: "Porduction Solaire et Autres"
+        text: "Production Solaire et Autres"
         align: left
 
       - type: horizontal-stack
