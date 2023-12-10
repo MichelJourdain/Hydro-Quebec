@@ -1,6 +1,5 @@
   - type: custom:vertical-stack-in-card
     cards:
-        
       - type: custom:text-divider-row
         text: "Production et Demande"
         align: left
@@ -10,6 +9,11 @@
           ############  Production   ##############
 
           - type: custom:flex-horseshoe-card
+            card_mod:
+              style: |
+                ha-card {
+                    border: 2.5px outset white
+                }
             entities:
               - entity: sensor.electricite_production_total
                 decimals: 0
@@ -81,6 +85,11 @@
           ############  Production Demande ##############
 
           - type: custom:apexcharts-card
+            card_mod:
+              style: |
+                ha-card {
+                    border: 2.5px outset white
+                }
             experimental:
               color_threshold: true
             show:
@@ -94,7 +103,7 @@
             graph_span: 10d
             apex_config:
               chart:
-                height: 240px
+                height: 230px
             series:
               - entity: sensor.electricite_production_total
                 name: "Production"
@@ -166,6 +175,11 @@
           ############  Demande  ##############
 
           - type: custom:flex-horseshoe-card
+            card_mod:
+              style: |
+                ha-card {
+                    border: 2.5px outset white
+                }
             entities:
               - entity: sensor.demande_electricite_hydro
                 decimals: 0
@@ -286,6 +300,7 @@
             horseshoe_scale:
               min: 0
               max: 35000
+
             color_stops:
               14000: "#06AFFD"
               15000: "#07D7FC"
@@ -426,6 +441,7 @@
             horseshoe_scale:
               min: 0
               max: 2000
+
             color_stops:
               1: "#06AFFD"
               100: "#07FCF8"
@@ -545,6 +561,7 @@
             horseshoe_scale:
               min: 0
               max: 2000
+
             color_stops:
               1: "#06AFFD"
               100: "#07FCF8"
@@ -658,6 +675,7 @@
             horseshoe_scale:
               min: 0
               max: 2000
+
             color_stops:
               1: "#06AFFD"
               100: "#07FCF8"
